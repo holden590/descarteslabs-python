@@ -215,7 +215,7 @@ def _retry(
                     ),
                     previous_exceptions,
                 ),
-                previous_exceptions,
+                previous_exceptions[-1],
             )
 
         # Raise RetryError if retries exhausted
@@ -225,7 +225,7 @@ def _retry(
                     "Maximum retry attempts calling {}".format(func),
                     previous_exceptions,
                 ),
-                previous_exceptions,
+                previous_exceptions[-1],
             )
 
         if retries is not None:
